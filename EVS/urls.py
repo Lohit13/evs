@@ -3,12 +3,12 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'audnet.views.home', name='home'),
+    # url(r'^$', 'EVS.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('social_auth.urls')),
-    url(r'^logout/', 'audnet.views.logout'),
+    url(r'^logout/', 'EVS.views.logout'),
 
     url(r'^$', 'EVS.views.index', name='home'), #index page
 
