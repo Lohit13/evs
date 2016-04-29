@@ -3,7 +3,7 @@ from userside.models import *
 
 # Register your models here.
 
-Models = [UserProfile, Ewaste]
+Models = [UserProfile, Ewaste, Offer]
 
 admin.site.register(Models)
 

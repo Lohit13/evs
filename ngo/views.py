@@ -37,11 +37,14 @@ def collect(request,waste_id=1):
 	if not email.isNgo:
 		return HttpResponseRedirect('/user/')
 
-	if method=='post':
+	if request.method=='post':
+		print 'sfsedf'
 		points = request.POST['points']
 
 		if not points.isdigit():
 			return HttpResponseRedirect('/ngo/view/')
+
+		print 'two'
 
 		points = int(points)
 
@@ -50,6 +53,7 @@ def collect(request,waste_id=1):
 		o = Offer(waste = w, ngo = email)
 
 		o.save()
+		print 'one'
 
-	return HttpResponseRedirect('/view')
+	return HttpResponseRedirect('/ngo/view')
 

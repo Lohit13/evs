@@ -20,7 +20,7 @@ class UserProfile(models.Model):
 	address = models.TextField(blank=True, null=True)
 
 	def __unicode__(self):
-		return self.name
+		return self.email
 
 
 class Ewaste(models.Model):

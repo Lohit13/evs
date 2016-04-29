@@ -8,7 +8,7 @@
 <br>
 <img src="/static/{{ obj.pic.url }}" width="100px" height="100px"/><br><br>
 User: {{ obj.user.name }}<br><br>
-<form method="post" action="/collect/{{ obj.id }}">
+<form method="post" action="/ngo/collect/{{ obj.id }}/">
 {% csrf_token %}
 <input type="number" name="points"/>
 <input type="submit" value="submit"/>

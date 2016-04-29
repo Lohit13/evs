@@ -1,0 +1,10 @@
+from django.conf.urls import patterns, include, url
+
+urlpatterns = patterns('',
+
+	# view waste
+	url(r'^view/$', 'ngo.views.view'),
+
+	# collect waste
+	url(r'^collect/(?P<waste_id>\d+)/$', 'ngo.views.collect'),
+)
