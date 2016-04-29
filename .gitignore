@@ -2,3 +2,4 @@
 *.py~
 *.*~
 db.sqlite3
+./static/uploads

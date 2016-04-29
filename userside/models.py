@@ -32,3 +32,10 @@ class Ewaste(models.Model):
 
 	def __unicode__(self):
 		return self.name
+
+class Offer(models.Model):
+	waste = models.ForeignKey(Ewaste)
+	ngo = models.ForeignKey(UserProfile)
+
+	def __unicode__(self):
+		return self.waste.name
