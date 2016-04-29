@@ -1,9 +1,9 @@
 from django.contrib import admin
-from userside.models import *
+from ecom.models import *
 
 # Register your models here.
 
-Models = [UserProfile, Ewaste]
+Models = [ECOM, Product]
 
 admin.site.register(Models)
 

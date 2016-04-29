@@ -1,9 +1,9 @@
 from django.contrib import admin
-from userside.models import *
+from ngo.models import *
 
 # Register your models here.
 
-Models = [UserProfile, Ewaste]
+Models = [NGO]
 
 admin.site.register(Models)
 

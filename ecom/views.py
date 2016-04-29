@@ -2,10 +2,9 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
+from ecom.models import *
+from ecom.forms import ProductForm
 from userside.models import *
-from userside.forms import EwasteForm
-
-# Create your views here.
 
 # Creates new user/Returns existing user
 def retUser(email):
@@ -19,21 +18,17 @@ def retUser(email):
 
 
 @login_required(login_url='/',redirect_field_name=None)
-def index(request):
-	user = retUser(request.user.email)
-
-	return render_to_response('userindex.html')
-
-
-@login_required(login_url='/',redirect_field_name=None)
 def add(request):
 	email = retUser(request.user.email)
+
+	if not email.isEcom:
+		return HttpResponseRedirect('/user/')
 
 	args = {}
 
 	if request.method == 'POST':
 		print 'yayay'
-		form = EwasteForm(request.POST, request.FILES)
+		form = ProductForm(request.POST, request.FILES)
 		print 'sfsdf'
 		print form
 		if form.is_valid():
@@ -45,34 +40,39 @@ def add(request):
 
 		args['error'] = "Your request has been logged. We will contact you shortly"
 
-	form = EwasteForm()
+	form = ProductForm()
 	args.update(csrf(request))
 	args['form'] = form
 
-	return render_to_response('add.html',args)
+	return render_to_response('addproduct.html',args)
 
 @login_required(login_url='/',redirect_field_name=None)
 def view(request):
 	email = retUser(request.user.email)
 
+	if not email.isEcom:
+		return HttpResponseRedirect('/user/')
+
 	args = {}
 
-	a = Ewaste.objects.filter(user=email)
+	a = Product.objects.filter(user=email)
 
-	args['ewaste'] = a
+	args['prod'] = a
 
-	return render_to_response('view.html',args)
+	return render_to_response('viewprod.html',args)
 
 @login_required(login_url='/',redirect_field_name=None)
-def delete(request,waste_id=1):
+def delete(request,prod_id=1):
 	email = retUser(request.user.email)
+
+	if not email.isEcom:
+		return HttpResponseRedirect('/user/')
 
 	args = {}
 
-	a = Ewaste.objects.get(id=waste_id)
+	a = Product.objects.get(id=prod_id)
 
 	if a.user == email:
 		a.delete()
 
-	return HttpResponseRedirect('/user/view/')
-
+	return HttpResponseRedirect('/ecom/view/')

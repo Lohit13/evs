@@ -42,6 +42,8 @@ INSTALLED_APPS = (
     'social_auth',
     'bootstrap3',
     'userside',
+    'ngo',
+    'ecom',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,0 +1,18 @@
+<center>
+BE AN ECOM<br><br>
+
+{{ error }}
+
+<form method="post" action="/ecom/register">
+{% csrf_token %}
+  Name of Company:<br>
+  <input type="text" name="name" placeholder="Name of Company"><br>
+  Address:<br>
+  <input type="text" name="address" placeholder="address"><br>
+  Name of Primary Contact:<br>
+  <input type="text" name="cname" placeholder="Name of primary contact"><br>
+  Phone Number:<br>
+  <input class='form-control' name='phno' type='number' maxlength="10"/><br>
+  <input type="submit" value="submit"><br>
+</form> 
+</center>

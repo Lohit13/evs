@@ -1,0 +1,25 @@
+
+<center>
+BE AN NGO<br><br>
+
+{{error}}
+
+<br><br>
+
+<form method="post" action="/ngo/register">
+{% csrf_token %}
+  Name of NGO:<br>
+  <input type="text" name="name" placeholder="Name of NGO"><br>
+  Address:<br>
+  <input type="text" name="address" placeholder="address"><br>
+  Phone Number:<br>
+  <input class='form-control' name='phno' type='number' maxlength="10"/><br>
+  Objective:<br>
+  <input type="text" name="obj" placeholder="Objective"><br>
+  Name of Chair:<br>
+  <input type="text" name="chair" placeholder="Name of Chair"><br>
+  
+  	<input type="submit" value="submit"><br>
+  
+</form> 
+</center>

@@ -1,0 +1,12 @@
+{% for waste in ewaste %}
+<div>
+{{ waste.name }}
+<br>
+{{ waste.desc }}
+<br>
+{{ waste.bought_on }}
+<br>
+<img src="/static/{{ waste.pic.url }}" width="100px" height="100px"/><br><br>
+<a href='/user/delete/{{ waste.id }}'>Delete</a>
+<br><br><br><hr><br><br>
+{% endfor %}
