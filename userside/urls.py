@@ -12,6 +12,15 @@ urlpatterns = patterns('',
 	url(r'^view/$', 'userside.views.view'),
 
 	# Delete waste
-	url(r'^delete/(?P<waste_id>\d+)/$', 'userside.views.delete')
+	url(r'^delete/(?P<waste_id>\d+)/$', 'userside.views.delete'),
+
+	# view offers
+	url(r'^viewoffers/$', 'userside.views.viewoffers'),
+
+	# Accept offer
+	url(r'^accept/(?P<offer_id>\d+)/$', 'userside.views.accept'),
+
+	# view products
+	url(r'^viewproducts/$', 'userside.views.viewproducts'),
 
 )

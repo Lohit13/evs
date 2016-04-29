@@ -5,10 +5,13 @@ urlpatterns = patterns('',
 	# Add product
 	url(r'^add/$', 'ecom.views.add'),
 
-	# view your waste
+	# view your products
 	url(r'^view/$', 'ecom.views.view'),
 
-	# Delete waste
-	url(r'^delete/(?P<prod_id>\d+)/$', 'ecom.views.delete')
+	# Delete product
+	url(r'^delete/(?P<prod_id>\d+)/$', 'ecom.views.delete'),
+
+	# Buy product
+	url(r'^buy/(?P<prod_id>\d+)/$', 'ecom.views.buy'),
 
 )

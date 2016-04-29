@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.context_processors import csrf
 from userside.models import *
 from userside.forms import EwasteForm
+from ecom.models import *
 
 # Create your views here.
 
@@ -22,7 +23,10 @@ def retUser(email):
 def index(request):
 	user = retUser(request.user.email)
 
-	return render_to_response('userindex.html')
+	args={}
+	args['userprofile'] = user
+
+	return render_to_response('userindex.html',args)
 
 
 @login_required(login_url='/',redirect_field_name=None)
@@ -76,3 +80,47 @@ def delete(request,waste_id=1):
 
 	return HttpResponseRedirect('/user/view/')
 
+@login_required(login_url='/',redirect_field_name=None)
+def viewoffers(request):
+	email = retUser(request.user.email)
+
+	args = {}
+
+	a = Offer.objects.filter(waste__user=email)
+
+	args['offers'] = a
+
+	return render_to_response('viewoffers.html',args)
+
+
+@login_required(login_url='/',redirect_field_name=None)
+def accept(request,offer_id=1):
+	user = retUser(request.user.email)
+
+	args = {}
+
+	offer = Offer.objects.get(id=offer_id)
+
+	if not offer.waste.user == user:
+		return HttpResponseRedirect('/user/viewoffers/')
+
+	waste = offer.waste
+	user.points += offer.points
+	user.save()
+	waste.delete()
+	offer.delete()
+
+	return HttpResponseRedirect('/user/viewoffers/')
+
+
+@login_required(login_url='/',redirect_field_name=None)
+def viewproducts(request):
+	email = retUser(request.user.email)
+
+	args = {}
+
+	a = Product.objects.all()
+
+	args['products'] = a
+
+	return render_to_response('viewproducts.html',args)

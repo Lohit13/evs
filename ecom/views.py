@@ -76,3 +76,19 @@ def delete(request,prod_id=1):
 		a.delete()
 
 	return HttpResponseRedirect('/ecom/view/')
+
+@login_required(login_url='/',redirect_field_name=None)
+def buy(request,prod_id=1):
+	user = retUser(request.user.email)
+
+	p = Product.objects.get(id=prod_id)
+
+	if p.points > user.points:
+		return HttpResponseRedirect('/user/')
+
+	user.points -= p.points
+	user.save()
+
+	p.delete()
+
+	return HttpResponseRedirect('/user/viewproducts/')

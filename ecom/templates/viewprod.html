@@ -1,12 +1,12 @@
-{% for waste in prod %}
+{% for p in prod %}
 <div>
-{{ waste.name }}
+{{ p.name }}
 <br>
-{{ waste.desc }}
+{{ p.desc }}
 <br>
-{{ waste.bought_on }}
+{{ p.points }}
 <br>
-<img src="/static/{{ waste.pic.url }}" width="100px" height="100px"/><br><br>
-<a href='/ecom/delete/{{ waste.id }}'>Delete</a>
+<img src="/static/{{ p.pic.url }}" width="100px" height="100px"/><br><br>
+<a href='/ecom/delete/{{ p.id }}'>Delete</a>
 <br><br><br><hr><br><br>
 {% endfor %}

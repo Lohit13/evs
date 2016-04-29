@@ -36,6 +36,7 @@ class Ewaste(models.Model):
 class Offer(models.Model):
 	waste = models.ForeignKey(Ewaste)
 	ngo = models.ForeignKey(UserProfile)
+	points = models.IntegerField()
 
 	def __unicode__(self):
 		return self.waste.name

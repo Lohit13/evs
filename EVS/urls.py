@@ -22,5 +22,4 @@ urlpatterns = patterns('',
 
     # NGO urls
     (r'^ngo/', include('ngo.urls')),
-
 )

@@ -37,7 +37,7 @@ def collect(request,waste_id=1):
 	if not email.isNgo:
 		return HttpResponseRedirect('/user/')
 
-	if request.method=='post':
+	if request.method=='POST':
 		print 'sfsedf'
 		points = request.POST['points']
 

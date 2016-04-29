@@ -1,0 +1,13 @@
+{% for offer in offers %}
+<div>
+{{ offer.waste.name }}
+<br>
+<img src="/static/{{ offer.waste.pic.url }}" width="100px" height="100px"/>
+<br>
+{{ offer.ngo.name }}
+<br>
+{{ offer.points }}
+<br>
+<a href="/user/accept/{{ offer.id }}/">Accept Offer</a>
+<br><br><br> 
+{% endfor %}

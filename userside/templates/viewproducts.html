@@ -1,0 +1,15 @@
+{% for product in products %}
+<div>
+{{ product.name }}
+<br>
+<img src="/static/{{ product.pic.url }}" width="100px" height="100px"/>
+<br>
+{{ product.desc }}
+<br>
+Seller: {{ product.user.email }}
+<br>
+Points to buy: {{ product.points }}
+<br>
+<a href="/ecom/buy/{{ product.id }}/">Buy Product</a>
+<br><br><br> 
+{% endfor %}
