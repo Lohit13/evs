@@ -24,6 +24,10 @@ def index(request):
 	user = retUser(request.user.email)
 
 	args={}
+
+	a = Offer.objects.filter(waste__user=user)
+
+	args['offers'] = a
 	args['userprofile'] = user
 
 	return render_to_response('userindex.html',args)
@@ -52,6 +56,7 @@ def add(request):
 	form = EwasteForm()
 	args.update(csrf(request))
 	args['form'] = form
+	args['userprofile'] = user
 
 	return render_to_response('add.html',args)
 
@@ -64,6 +69,7 @@ def view(request):
 	a = Ewaste.objects.filter(user=email)
 
 	args['ewaste'] = a
+	args['userprofile'] = user
 
 	return render_to_response('view.html',args)
 
@@ -89,6 +95,7 @@ def viewoffers(request):
 	a = Offer.objects.filter(waste__user=email)
 
 	args['offers'] = a
+	args['userprofile'] = user
 
 	return render_to_response('viewoffers.html',args)
 
@@ -122,5 +129,6 @@ def viewproducts(request):
 	a = Product.objects.all()
 
 	args['products'] = a
+	args['userprofile'] = user
 
 	return render_to_response('viewproducts.html',args)

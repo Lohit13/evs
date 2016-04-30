@@ -27,6 +27,7 @@ def view(request):
 	a = Ewaste.objects.all()
 
 	args['objs'] = a
+	args['userprofile'] = user
 
 	return render_to_response('viewall.html',args)
 
