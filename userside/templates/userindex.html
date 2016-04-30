@@ -4,7 +4,7 @@
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
-
+      {% if offers %}
           <h2 class="sub-header">Offers on your Ewaste</h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -32,4 +32,7 @@
               </tbody>
             </table>
           </div>
+    {% else %}
+      <h3> No offers are currently available. Please upload more electronics to sell.</h3>
+    {% endif %}
 {% endblock %}
