@@ -1,25 +1,95 @@
 
-<center>
-BE AN NGO<br><br>
+{% load staticfiles %}
 
-{{error}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<br><br>
+    <title>Shop Online</title>
 
-<form method="post" action="/ngo/register">
-{% csrf_token %}
-  Name of NGO:<br>
-  <input type="text" name="name" placeholder="Name of NGO"><br>
-  Address:<br>
-  <input type="text" name="address" placeholder="address"><br>
-  Phone Number:<br>
-  <input class='form-control' name='phno' type='number' maxlength="10"/><br>
-  Objective:<br>
-  <input type="text" name="obj" placeholder="Objective"><br>
-  Name of Chair:<br>
-  <input type="text" name="chair" placeholder="Name of Chair"><br>
-  
-  	<input type="submit" value="submit"><br>
-  
-</form> 
-</center>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/jumbotron.css" %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/user/">SellASAP!</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/user">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+      
+
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+
+        <center>
+        BE AN NGO<br><br>
+
+        {{error}}
+
+        <br><br>
+
+        <form method="post" action="/ngo/register" style="width: 200px">
+        {% csrf_token %}
+          Name of NGO:<br>
+          <input type="text" name="name" placeholder="Name of NGO"><br>
+          Address:<br>
+          <input type="text" name="address" placeholder="address"><br>
+          Phone Number:<br>
+          <input class='form-control' name='phno' type='number' maxlength="10"/><br>
+          Objective:<br>
+          <input type="text" name="obj" placeholder="Objective"><br>
+          Name of Chair:<br>
+          <input type="text" name="chair" placeholder="Name of Chair"><br>
+          
+          	<input type="submit" value="submit"><br>
+          
+        </form> 
+        </center>
+  </div>
+  </div>
+</body>
+</html>

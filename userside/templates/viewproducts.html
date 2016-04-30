@@ -1,15 +1,113 @@
-{% for product in products %}
-<div>
-{{ product.name }}
-<br>
-<img src="/static/{{ product.pic.url }}" width="100px" height="100px"/>
-<br>
-{{ product.desc }}
-<br>
-Seller: {{ product.user.email }}
-<br>
-Points to buy: {{ product.points }}
-<br>
-<a href="/ecom/buy/{{ product.id }}/">Buy Product</a>
-<br><br><br> 
-{% endfor %}
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Online</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "jumbotron.css" %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/user/">SellASAP!</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/user/viewproducts/">Points: {{userprofile.points}}</a></li>
+            <li><a href="/user">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+			
+
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div style="background-color:grey" align="center">
+      <nav class="navbar" align="center">
+        <div class="container" style="color:white" align="center">        
+            <p class="navbar-text navbar-center">Electronics &#9660;</p>        
+            <p class="navbar-text navbar-center">Men &#9660;</p>        
+            <p class="navbar-text navbar-center">Women &#9660;</p>        
+            <p class="navbar-text navbar-center">HOME & Furniture &#9660;</p>        
+            <p class="navbar-text navbar-center">Auto & Sport &#9660;</p>        
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+		{% for product in products %}
+	        <div class="col-md-4" align="center">
+	          <h2>{{ product.name }}</h2>
+	          <img src="/static/{{ product.pic.url }}" height="100px">
+	          <p>Cost: {{ product.points }} Points</p>
+	          <p>{{ product.desc }}</p>
+	          <p>Seller: {{ product.user.email }}</p>
+	          <p><a class="btn btn-success" href="/ecom/buy/{{ product.id }}/" role="button">Buy Now </a></p>
+	        </div>
+		{% endfor %}
+
+
+
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!-- // <script src="../../dist/js/bootstrap.min.js"></script> -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- // <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  </body>
+</html>
