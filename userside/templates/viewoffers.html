@@ -1,3 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}View All Products{% endblock %}
+
+
+{% block content %}
+
+          <h2 class="sub-header">Ewastes Up for sale</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Date Posted</th>
+                  <th>Picture</th>
+                  <th>Name</th>
+                  <th>NGO</th>
+                  <th>Points</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+				{% for waste in ewaste %}
+	                <tr>
+	                  <td>{{ waste.bought_on }}</td>
+	                  <td><img src="/static/{{ waste.pic.url }}" height="50px "></td>
+	                  <td>{{ waste.name }}</td>
+	                  <td>{{ offer.ngo.name }}</td>
+	                  <td>{{ offer.points }}</td>
+	                  <td><a href='/user/accept/{{ offer.id }}' class="btn btn-default">Accept Offer </a></td>
+	                </tr>
+				{% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+
+
+{% endblock %}
+
 {% for offer in offers %}
 <div>
 {{ offer.waste.name }}

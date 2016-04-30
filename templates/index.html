@@ -1,3 +1,472 @@
-SUP
+{% load staticfiles %}
 
-<a href="{% url 'socialauth_begin' 'google-oauth2' %}">Log In</a>
+ <!-- FlatFy Theme - Andrea Galanti /-->
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Flatfy Free Flat and Responsive HTML5 Template ">
+    <meta name="author" content="">
+
+    <title>SellASAP!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{%static "css/bootstrap.min.css" %}" rel="stylesheet">
+ 
+    <!-- Custom Google Web Font -->
+    <link href="{%static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+	
+    <!-- Custom CSS-->
+    <link href="{%static "css/general.css" %}" rel="stylesheet">
+	
+	 <!-- Owl-Carousel -->
+    <link href="{%static "css/custom.css" %}" rel="stylesheet">
+    <link href="{%static "css/owl.carousel.css" %}" rel="stylesheet">
+    <link href="{%static "css/owl.theme.css" %}" rel="stylesheet">
+    <link href="{%static "css/style.css" %}" rel="stylesheet">
+    <link href="{%static "css/animate.css" %}" rel="stylesheet">
+
+<!--     <link href="css/custom.css" rel="stylesheet">
+	<link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet"> -->
+	
+	<!-- Magnific Popup core CSS file -->
+	<link rel="stylesheet" href="{%static "css/magnific-popup.css" %}"> 
+	
+	<script src="{%static "js/modernizr-2.8.3.min.js" %}"></script>  <!-- Modernizr /-->
+	<!--[if IE 9]>
+		<script src="js/PIE_IE9.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="js/PIE_IE678.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+
+<body id="home">
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status"></div>
+	</div>
+	<!-- FullScreen -->
+    <div class="intro-header" style=" ; background-size: cover">
+		<div class="col-xs-12 text-center abcen1">
+			<h1 class="h1_home wow fadeIn" data-wow-delay="0.4s" style="text-shadow: 0px 0px 5px #000;">SellASAP!</h1>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.6s" style="font-weight:600;text-shadow: 0px 0px 5px #000;">Have any non-working electricals? SellASAP!</h3>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.6s" style="font-weight:600;text-shadow: 0px 0px 5px #000;">Take a step to make your Environment Green</h3>
+			<ul class="list-inline intro-social-buttons">
+				<li><a class="btn btn-lg btn-success" data-wow-delay="0.8s" href="{% url 'socialauth_begin' 'google-oauth2' %}"><span class="network-name">START SELLING NOW</span></a>
+				</li>
+			</ul>
+		</div>    
+        <!-- /.container -->
+		<div class="col-xs-12 text-center abcen wow fadeIn">
+			<div class="button_down "> 
+				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#whatis"> <img class="img_scroll" src="{%static "img/icon/circle.png" %}" alt=""> </a>
+			</div>
+		</div>
+    </div>
+	
+	<!-- NavBar-->
+	<nav class="navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#home">E-waste Management</a>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					
+					<li class="menuItem"><a href="#whatis">What is?</a></li>
+					<li class="menuItem"><a href="#useit">Use It</a></li>
+					<li class="menuItem"><a href="#screen">Screenshot</a></li>
+					<li class="menuItem"><a href="#credits">Credits</a></li>
+					<li class="menuItem"><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		   
+		</div>
+	</nav> 
+	
+	<!-- What is -->
+	<div id="whatis" class="content-section-b" style="border-top: 0">
+		<div class="container">
+
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>What is?</h2>
+				<p class="lead" style="margin-top:0">A special thanks to Death.</p>
+				
+			</div>
+			
+			<div class="row">
+			
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img class="rotate" src="{%static "img/capture.jpg" %}" style="height: 100px; " alt="Generic placeholder image">
+				  <h3>Capture</h3>
+				  <p class="lead">Gather all the electrical things useless lying in your in your home, damaged or non working, take a picture and upload.</p>
+
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="{%static "img/money.png" %}" style="height: 100px" alt="Generic placeholder image">
+				   <h3>Sell</h3>
+				   <p class="lead">Earn e-money by selling your e-waste products to NGO. </p>
+				   <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="{%static "img/buy.jpg" %}" style="height: 100px" alt="Generic placeholder image">
+				   <h3>Buy</h3>
+					<p class="lead">Buy new products with your e-money from your favorite e-commerce company. </p>
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+			</div><!-- /.row -->
+				
+
+		</div>
+	</div>
+	
+	<!-- Use it -->
+    <div id ="useit" class="content-section-a">
+
+        <div class="container">
+			
+            <div class="row">
+			
+				<div class="col-sm-6 pull-right wow fadeInRightBig">
+                    <img class="img-responsive " src="{%static "img/sell.jpg" %}" alt="" style="margin-top: 30px">
+                </div>
+				
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">Sell your E-waste</h3>
+					<div class="sub-title lead3">Once logged in, you can upload and sell your electrical waste here.</div>
+                    <p class="lead">
+						-> Throwing wires, mobile batteries and other electrical products being non-biodegradable, harm environment.<br/> 
+						-> Take a simple initiative to make environment green in a financial manner.<br/> 
+						-> Save environment and earn money at the same time. It's a win-win.<br/>
+						-> Never throw any e-waste in dustbin. Adopt this habbit of selling your unwanted electricals.<br/>
+					</p>
+					 <a class="btn btn-embossed btn-info" href="{% url 'socialauth_begin' 'google-oauth2' %}" role="button">Sign Up now and earn e-money</a></p>
+				</div>   
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+    <div class="content-section-b"> 
+		
+		<div class="container">
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeftBig">
+                     <div id="owl-demo-1" class="owl-carousel">
+						<a href="{%static "img/used-Cell-Phones.jpg" %}" class="image-link">
+							<div class="item">
+								<img  class="img-responsive img-rounded" src="{%static "img/used-Cell-Phones.jpg" %}" alt="">
+							</div>
+						</a>
+						<a href="{%static "img/usedlaptop.jpg" %}" class="image-link">
+							<div class="item">
+								<img  class="img-responsive img-rounded" src="{%static "img/usedlaptop.jpg" %}" alt="">
+							</div>
+						</a>
+						<a href="{%static "img/jvc_tv.jpg" %}" class="image-link">
+							<div class="item">
+								<img  class="img-responsive img-rounded" src="{%static "img/jvc_tv.jpg" %}" alt="">
+							</div>
+						</a>
+					</div>       
+                </div>
+				
+                <div class="col-sm-6 wow fadeInRightBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">Collect Electronic waste</h3>
+					<div class="sub-title lead3">Organisations Interested in taking care of environment by collecting electricals and disposing them in an appropriate way are welcome.</div>
+                    <p class="lead">
+						Join our family and be a part of the plaform where electronic products are available on sale.
+					</p>
+
+					 <a class="btn btn-embossed btn-info" href="#" role="button">Sign up (NGO)</a></p>
+				</div>  			
+			</div>
+        </div>
+    </div>
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+             <div class="row">
+			 
+				<div class="col-sm-6 pull-right wow fadeInRightBig">
+                    <img class="img-responsive " src="{%static "img/doge.png" %}" alt="">
+                </div>
+			 
+                <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
+                    <h3 class="section-heading">Buy brand new Electricals</h3>
+                    <p class="lead">
+                    	Use your e-money to buy electrical products. 
+					</p>
+					
+					<ul class="descp lead2">
+						<li><i class="glyphicon glyphicon-refresh"></i> Buy new prducts by selling your useless electronics</li>
+						<li><i class="glyphicon glyphicon-shopping-cart"></i> Your favorite e-commerce brands available selling same products</li>
+					</ul>
+					 <a class="btn btn-embossed btn-info" href="{% url 'socialauth_begin' 'google-oauth2' %}" role="button">Sign up now</a> and replace your unwanted electronics with brand new</p>
+
+				</div>           
+            </div>
+        </div>
+
+    </div>
+
+	<!-- Screenshot -->
+	<div id="screen" class="content-section-b">
+        <div class="container">
+          <div class="row" >
+			 <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
+				<h2>NGOs</h2>
+				<p class="lead" style="margin-top:0"> to buy and take care of used electronics</p>
+			 </div>
+		  </div>
+		    <div class="row wow bounceInUp" >
+              <div id="owl-demo" class="owl-carousel">
+				
+				<a href="{%static "img/chintan.png" %}" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="{%static "img/chintan.png" %}" alt="Owl Image">
+					</div>
+				</a>
+				
+               <a href="{%static "img/pahal.jpg" %}" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="{%static "img/pahal.jpg" %}" alt="Owl Image">
+					</div>
+				</a>
+				
+				<a href="{%static "img/wastepicker.png" %}" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="{%static "img/wastepicker.png" %}" alt="Owl Image">
+					</div>
+				</a>
+				
+				<a href="{%static "img/chintan.png" %}" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="{%static "img/chintan.png" %}" alt="Owl Image">
+					</div>
+				</a>
+				
+               <a href="{%static "img/pahal.jpg" %}" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="{%static "img/pahal.jpg" %}" alt="Owl Image">
+					</div>
+				</a>
+				
+				<a href="{%static "img/wastepicker.png" %}" class="image-link">
+					<div class="item">
+						<img  class="img-responsive img-rounded" src="{%static "img/wastepicker.png" %}" alt="Owl Image">
+					</div>
+				</a>
+              </div>       
+          </div>
+        </div>
+
+
+	</div>
+	
+	<div  class="content-section-c ">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-6 col-md-offset-3 text-center white">
+				<h2>Get Live Updates</h2>
+				<p class="lead" style="margin-top:0">About the new features getting updated here regularly</p>
+			 </div>
+			<div class="col-md-6 col-md-offset-3 text-center">
+				<div class="mockup-content">
+						<div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1">
+							<button type="button "><span>Subscribe to our Newsletter</span></button>
+							<div class="morph-content">
+								<div>
+									<div class="content-style-form content-style-form-4 ">
+										<h2 class="morph-clone">Subscribe to our Newsletter</h2>
+										<form>
+											<p><label>Your Email Address</label><input type="text"/></p>
+											<p><button>Subscribe me</button></p>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>	
+			</div>>
+		</div>
+	</div>	
+	
+	<!-- Credits -->
+	<div id="credits" class="content-section-a">
+		<div class="container">
+			<div class="row">
+			
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>Sign Up </h2>
+			 </div>
+			 
+				<div class="col-sm-6  block wow bounceIn">
+					<div class="row">
+						<div class="col-md-4 box-icon rotate"> 
+							<i class="fa fa-desktop fa-4x "> </i> 
+						</div>
+						<div class="col-md-8 box-ct">
+							<h3> Seller </h3>
+							<p> Want to sell your unused electricals for e-money? </p>
+							<a class="btn btn-success" data-wow-delay="0.8s" href="{% url 'socialauth_begin' 'google-oauth2' %}"><span class="network-name">START SELLING NOW</span></a>
+						</div>
+				  </div>
+			  </div>
+			  <div class="col-sm-6 block wow bounceIn">
+					<div class="row">
+					  <div class="col-md-4 box-icon rotate"> 
+						<i class="fa fa-picture-o fa-4x "> </i> 
+					  </div>
+					  <div class="col-md-8 box-ct">
+						<h3> Buy Used Electronic  </h3>
+						<p> Looking for E-waste drive to collect electronic waste to dispose them off or recycle or reuse carefully. </p>
+						<a class="btn btn-success" data-wow-delay="0.8s"><span class="network-name">Join us</span></a>
+					  </div>
+					</div>
+			  </div>
+		  </div>
+		  
+		  <div class="row tworow">
+				<div class="col-sm-6  block wow bounceIn">
+					<div class="row">
+						<div class="col-md-4 box-icon rotate"> 
+							<i class="fa fa-magic fa-4x "> </i> 
+						</div>
+						<div class="col-md-8 box-ct">
+							<h3>E-commerce </h3>
+							<p> Need a platform to advertise and commercialise your business, we will help you promote your e-commerce company. Sign up to join the market and sell things online.</p>
+							<a class="btn btn-success" data-wow-delay="0.8s"><span class="network-name">Join us</span></a>
+						</div>
+				  </div>
+			  </div>
+		  </div>
+		</div>
+	</div>
+	
+	
+	<!-- Contact -->
+	<div id="contact" class="content-section-a">
+		<div class="container">
+			<div class="row">
+			
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>Contact Us</h2>
+			</div>
+			
+			<form role="form" action="" method="post" >
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Your Name</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputEmail">Your Email</label>
+						<div class="input-group">
+							<input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required  >
+							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputMessage">Message</label>
+						<div class="input-group">
+							<textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+						</div>
+					</div>
+
+					<input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right">
+				</div>
+			</form>
+			
+			<hr class="featurette-divider hidden-lg">
+				<div class="col-md-5 col-md-push-1 address">
+					<address>
+					<h3>Office Location</h3>
+					<p class="lead"><a href="#">IIIT-Delhi<br>
+					Okhla phase 3</a><br>
+					Delhi-110020<br/>
+					Phone: </p>
+					</address>
+
+					<h3>Social</h3>
+					<li class="social"> 
+					<a href="#"><i class="fa fa-facebook-square fa-size"> </i></a>
+					<a href="#"><i class="fa  fa-twitter-square fa-size"> </i> </a> 
+					<a href="#"><i class="fa fa-google-plus-square fa-size"> </i></a>
+					<a href="#"><i class="fa fa-flickr fa-size"> </i> </a>
+					</li>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+
+    <!-- JavaScript -->
+    <script src="{%static "js/jquery-1.10.2.js" %}"></script>
+    <script src="{%static "js/bootstrap.js" %}"></script>
+	<script src="{%static "js/owl.carousel.js" %}"></script>
+	<script src="{%static "js/script.js" %}"></script>
+	<!-- StikyMenu -->
+	<script src="{%static "js/stickUp.min.js" %}"></script>
+	<script type="text/javascript">
+	  jQuery(function($) {
+		$(document).ready( function() {
+		  $('.navbar-default').stickUp();
+		  
+		});
+	  });
+	
+	</script>
+	<!-- Smoothscroll -->
+	<script type="text/javascript" src="{%static "js/jquery.corner.js" %}"></script> 
+	<script src="{%static "js/wow.min.js" %}"></script>
+	<script>
+	 new WOW().init();
+	</script>
+	<script src="{%static "js/classie.js" %}"></script>
+	<script src="{%static "js/uiMorphingButton_inflow.js" %}"></script>
+	<!-- Magnific Popup core JS file -->
+	<script src="{%static "js/jquery.magnific-popup.js" %}"></script> 
+
+</body>
+
+</html>

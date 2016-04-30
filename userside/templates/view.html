@@ -1,12 +1,39 @@
-{% for waste in ewaste %}
-<div>
-{{ waste.name }}
-<br>
-{{ waste.desc }}
-<br>
-{{ waste.bought_on }}
-<br>
-<img src="/static/{{ waste.pic.url }}" width="100px" height="100px"/><br><br>
-<a href='/user/delete/{{ waste.id }}'>Delete</a>
-<br><br><br><hr><br><br>
-{% endfor %}
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}View All Products{% endblock %}
+
+
+{% block content %}
+
+          <h2 class="sub-header">Ewastes Up for sale</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Date Posted</th>
+                  <th>Picture</th>
+                  <th>Name</th>
+                  <th>Desc</th>
+                  <th>Status</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+				{% for waste in ewaste %}
+	                <tr>
+	                  <td>{{ waste.bought_on }}</td>
+	                  <td><img src="/static/{{ waste.pic.url }}" height="50px "></td>
+	                  <td>{{ waste.name }}</td>
+	                  <td>{{ waste.desc }}</td>
+	                  <td style="color:rgb(0, 240, 0)"><b>Available</b></td>
+	                  <td><a href='/user/delete/{{ waste.id }}' class="btn btn-default">Delete</a></td>
+	                </tr>
+				{% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+
+
+{% endblock %}
