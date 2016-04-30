@@ -24,6 +24,10 @@ def index(request):
 	user = retUser(request.user.email)
 
 	args={}
+
+	a = Offer.objects.filter(waste__user=user)
+
+	args['offers'] = a
 	args['userprofile'] = user
 
 	return render_to_response('userindex.html',args)
