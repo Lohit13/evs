@@ -43,6 +43,7 @@ def add(request):
 	form = ProductForm()
 	args.update(csrf(request))
 	args['form'] = form
+	user = email
 	args['userprofile'] = user
 
 	return render_to_response('addproduct.html',args)
@@ -59,6 +60,7 @@ def view(request):
 	a = Product.objects.filter(user=email)
 
 	args['prod'] = a
+	user = email
 	args['userprofile'] = user
 
 	return render_to_response('viewprod.html',args)

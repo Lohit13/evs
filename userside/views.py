@@ -56,6 +56,7 @@ def add(request):
 	form = EwasteForm()
 	args.update(csrf(request))
 	args['form'] = form
+	user = email
 	args['userprofile'] = user
 
 	return render_to_response('add.html',args)
@@ -95,6 +96,7 @@ def viewoffers(request):
 	a = Offer.objects.filter(waste__user=email)
 
 	args['offers'] = a
+	user = email
 	args['userprofile'] = user
 
 	return render_to_response('viewoffers.html',args)
@@ -129,6 +131,7 @@ def viewproducts(request):
 	a = Product.objects.all()
 
 	args['products'] = a
+	user = email
 	args['userprofile'] = user
 
 	return render_to_response('viewproducts.html',args)
