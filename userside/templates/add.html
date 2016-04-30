@@ -8,9 +8,58 @@
 {{ error }}
 <form method='post' action='/user/add/' enctype="multipart/form-data">
 {% csrf_token %}
-{{ form }}
+	<div class = "row">
+		
+		<div class = "row">
+			<div class = "col-md-1"></div>
+			<div class = "col-md-2">Name : </div>
+			<div class = "col-md-4">
+				{{ form.name }}
+			</div>
+		</div>
 
-<input type='submit' class="btn btn-default" value='Add'>
+		<br>
+		
+		<div class = "row">
+			<div class = "col-md-1"></div>
+			<div class = "col-md-2">Description : </div>
+			<div class = "col-md-4">
+				{{ form.desc }}
+			</div>		
+		</div>
+		<br>
+
+		<div class = "row">
+			<div class = "col-md-1"></div>
+			<div class = "col-md-2">Bought On : </div>
+			<div class = "col-md-4">
+				{{ form.bought_on }}
+			</div>		
+		</div>
+		<br>
+		
+		<div class = "row">
+			<div class = "col-md-1"></div>
+			<div class = "col-md-2">Picture : </div>
+			<div class = "col-md-4">
+				{{ form.pic }}
+			</div>	
+		</div>
+		<br>
+
+		<div class = "row">
+			<div class = "col-md-1"></div>
+			<div class = "col-md-2"></div>
+			<div class = "col-md-4">
+
+				<input type='submit' class="btn btn md btn-success" value='Add'>
+
+			</div>	
+		</div>
+		<br>
+
+	</div>
+	
 
 </form>
 

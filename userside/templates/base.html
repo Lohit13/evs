@@ -70,18 +70,24 @@
 			<li><a href="/user/viewoffers">View offers on your ewaste</a></li>
 			<li><a href="/user/viewproducts">View products to buy</a></li>
 
-			{% if userprofile.isNgo %}
-      <br/><br/>
-			<li><a><h4>NGO privileges</h4></a></li>
-			<li><a href="/ngo/view/">View waste</a> </li>
-			{% endif %}
+      		{% if userprofile.isNgo %}
+              <br/><br/>
+        			<li><a><h4>NGO privileges</h4></a></li>
+        			<li><a href="/ngo/view/">View waste</a> </li>
+      			{% else %}
+              <br/><br/>
+              <li><a href="/register/ngo/">Register as an NGO</a> </li>      
+            {% endif %}
 
-			{% if userprofile.isEcom %}
-      <br/><br/>
-			<li><a><h4>E-Commerce privileges </h4></a></li>
-			<li><a href="/ecom/add/">Add a product to sell</a> </li>
-			<li><a href="/ecom/view/">View your products</a> </li>
-			{% endif %}
+      		{% if userprofile.isEcom %}
+              <br/><br/>
+        			<li><a><h4>E-Commerce privileges </h4></a></li>
+        			<li><a href="/ecom/add/">Add a product to sell</a> </li>
+        			<li><a href="/ecom/view/">View your products</a> </li>
+      			{% else %}
+              <br/><br/>
+              <li><a href="/register/ecom/">Register as an E-Commerce</a> </li>                    
+            {% endif %}
           </ul>
         </div>
 
